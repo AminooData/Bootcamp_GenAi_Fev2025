@@ -58,3 +58,57 @@ our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
 print("Mes numéros favoris:", my_fav_numbers)
 print("Les numéros favoris de mes amis:", friend_fav_numbers)
 print("Nos numéros favoris combinés:", our_fav_numbers)
+
+# Exercise 6
+#  Faux 
+
+# Exercise 7
+#  Définition de la liste de départ
+basket = ["Banana", "Apples", "Oranges", "Blueberries"]
+
+#  1. Supprimer "Banana" de la liste
+basket.remove("Banana")  # La méthode .remove() supprime un élément par son nom
+
+#  2. Supprimer "Blueberries" de la liste
+basket.remove("Blueberries")  # On supprime aussi Blueberries de la liste
+
+#  3. Ajouter "Kiwi" à la fin de la liste
+basket.append("Kiwi")  # La méthode .append() ajoute un élément à la fin
+
+#  4. Ajouter "Apples" au début de la liste
+basket.insert(0, "Apples")  # .insert(position, élément) ajoute "Apples" à l'index 0 (début)
+
+#  5. Compter combien de "Apples" sont présents dans la liste
+apple_count = basket.count("Apples")  # .count() compte le nombre d'occurrences d'un élément
+print(f"Il y a {apple_count} pommes dans le panier.")  # Affiche le nombre de pommes
+
+#  6. Vider complètement la liste
+basket.clear()  # .clear() supprime tous les éléments de la liste
+
+#  7. Afficher la liste vide
+print(basket)  # Affiche []
+
+# Exercise 8
+
+#  Liste des commandes initiales
+sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich",
+                   "Pastrami sandwich", "Egg sandwich", "Chicken sandwich",
+                   "Pastrami sandwich"]
+
+# Étape 1 : Supprimer tous les "Pastrami sandwich" car il n'y en a plus
+while "Pastrami sandwich" in sandwich_orders:  
+    sandwich_orders.remove("Pastrami sandwich")  
+
+#  Étape 2 : Créer une liste pour stocker les sandwichs préparés
+finished_sandwiches = []  
+
+#  Étape 3 : Préparer chaque sandwich
+while sandwich_orders:  
+    current_sandwich = sandwich_orders.pop(0)  # 📌 Retirer le premier sandwich de la liste
+    print(f"Je prépare votre {current_sandwich}.")  
+    finished_sandwiches.append(current_sandwich)  
+
+#  Étape 4 : Afficher tous les sandwichs préparés
+print("\nTous les sandwichs ont été préparés :")
+for sandwich in finished_sandwiches:  
+    print(f"- {sandwich}")  
