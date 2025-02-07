@@ -1,0 +1,39 @@
+# Challenge 1
+#  Demande un nombre et une longueur à l'utilisateur
+number = int(input("Enter a number: "))  # Convertit l'entrée en entier
+length = int(input("Enter a length: "))  # Convertit l'entrée en entier
+
+#  Créer une liste vide pour stocker les multiples
+multiples = []
+
+#  Générer les multiples du nombre jusqu'à la longueur spécifiée
+for i in range(1, length + 1):  
+    multiples.append(number * i)  # Ajoute le multiple à la liste
+
+# Afficher la liste des multiples
+print(multiples)
+
+# Challenge 2
+# Demande un nombre et une longueur à l'utilisateur
+number = int(input("Enter a number: "))  # Convertit l'entrée en entier
+length = int(input("Enter a length: "))  # Convertit l'entrée en entier
+
+#  Créer une liste vide pour stocker les multiples
+multiples = []
+
+#  Générer les multiples du nombre jusqu'à la longueur spécifiée
+for i in range(1, length + 1):  
+    multiples.append(number * i)  # Ajoute le multiple à la liste
+
+#  Afficher la liste des multiples
+print(multiples)
+
+
+
+
+
+
+
+
+
+
