@@ -1,0 +1,50 @@
+# Définition de la classe Farm
+class Farm:
+    def __init__(self, name):
+        self.name = name  # Nom de la ferme
+        self.animals = {}  # Dictionnaire pour stocker les animaux
+
+    # Ajouter un animal à la ferme
+    def add_animal(self, animal, quantity=1):
+        if animal in self.animals:
+            self.animals[animal] += quantity  # Ajoute à la quantité existante
+        else:
+            self.animals[animal] = quantity  # Initialise l'animal
+
+    # Afficher les informations de la ferme
+    def get_info(self):
+        info = f"{self.name}'s farm\n\n"  # Titre avec le nom de la ferme
+
+        for animal, quantity in self.animals.items():
+            info += f"{animal:<10} : {quantity}\n"  # Alignement propre des colonnes
+
+        info += "\n    E-I-E-I-O!\n"  # Chant de la ferme
+        return info
+
+    # Récupérer la liste triée des types d'animaux
+    def get_animal_types(self):
+        return sorted(self.animals.keys())  # Retourne une liste triée
+
+    # Générer une phrase descriptive
+    def get_short_info(self):
+        animal_list = self.get_animal_types()
+        animals_str = ", ".join(animal + "s" for animal in animal_list)  # Ajoute 's' pour le pluriel
+        return f"{self.name}'s farm has {animals_str}."
+
+# Instanciation de la ferme
+macdonald = Farm("McDonald")
+
+# Ajout des animaux
+macdonald.add_animal('cow', 5)
+macdonald.add_animal('sheep')
+macdonald.add_animal('sheep')
+macdonald.add_animal('goat', 12)
+
+# Affichage des informations de la ferme
+print(macdonald.get_info())
+
+# Affichage des types d'animaux
+print(macdonald.get_animal_types())
+
+# Affichage de la phrase descriptive
+print(macdonald.get_short_info())

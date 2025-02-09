@@ -1,0 +1,132 @@
+# Exercice 1 - Challenge Day 3
+
+# Définition de la classe Cat
+class Cat:
+    def __init__(self, cat_name, cat_age):
+        self.name = cat_name
+        self.age = cat_age
+
+# Création de trois objets Cat
+cat1 = Cat("Whiskers", 5)
+cat2 = Cat("Tom", 7)
+cat3 = Cat("Garfield", 3)
+
+# Fonction pour trouver le plus vieux chat
+def find_oldest_cat(cats):
+    return max(cats, key=lambda cat: cat.age)  # Utilise max() avec une clé basée sur l'âge
+
+# Trouver et afficher le plus vieux chat
+oldest_cat = find_oldest_cat([cat1, cat2, cat3])
+print(f"The oldest cat is {oldest_cat.name}, and is {oldest_cat.age} years old.")
+
+# Exercice 2 - Challenge Day 3
+
+# Définition de la classe Dog
+class Dog:
+    def __init__(self, name, height):
+        self.name = name
+        self.height = height
+
+    def bark(self):
+        print(f"{self.name} goes woof!")
+
+    def jump(self):
+        print(f"{self.name} jumps {self.height * 2} cm high!")
+
+# Création des objets
+davids_dog = Dog("Rex", 50)
+sarahs_dog = Dog("Teacup", 20)
+
+# Affichage des détails et appel des méthodes
+print(f"David's dog: {davids_dog.name}, {davids_dog.height} cm")
+davids_dog.bark()
+davids_dog.jump()
+
+print(f"Sarah's dog: {sarahs_dog.name}, {sarahs_dog.height} cm")
+sarahs_dog.bark()
+sarahs_dog.jump()
+
+# Comparer les tailles des chiens
+bigger_dog = davids_dog if davids_dog.height > sarahs_dog.height else sarahs_dog
+print(f"The bigger dog is {bigger_dog.name}.")
+
+# Exercice 3 - Challenge Day 3
+
+# Définition de la classe Song
+class Song:
+    def __init__(self, lyrics):
+        self.lyrics = lyrics
+
+    def sing_me_a_song(self):
+        for line in self.lyrics:
+            print(line)
+
+# Création de l'objet avec les paroles de la chanson
+stairway = Song([
+    "There’s a lady who's sure",
+    "all that glitters is gold",
+    "and she’s buying a stairway to heaven"
+])
+
+# Appel de la méthode pour afficher les paroles
+stairway.sing_me_a_song()
+
+# Exercice 4 - Challenge Day 3
+
+# Définition de la classe Zoo
+class Zoo:
+    def __init__(self, zoo_name):
+        self.name = zoo_name
+        self.animals = []
+
+    def add_animal(self, new_animal):
+        if new_animal not in self.animals:
+            self.animals.append(new_animal)
+
+    def get_animals(self):
+        print(f"Animals in {self.name}: {', '.join(self.animals)}")
+
+    def sell_animal(self, animal_sold):
+        if animal_sold in self.animals:
+            self.animals.remove(animal_sold)
+
+    def sort_animals(self):
+        sorted_animals = sorted(self.animals)  # Trie les animaux par ordre alphabétique
+        grouped_animals = {}
+
+        for animal in sorted_animals:
+            first_letter = animal[0]  # Première lettre de l'animal
+            if first_letter not in grouped_animals:
+                grouped_animals[first_letter] = [animal]
+            else:
+                grouped_animals[first_letter].append(animal)
+
+        return grouped_animals
+
+    def get_groups(self):
+        grouped_animals = self.sort_animals()
+        for letter, group in grouped_animals.items():
+            print(f"{letter}: {group}")
+
+# Création d'un objet Zoo
+ramat_gan_safari = Zoo("Ramat Gan Safari")
+
+# Ajout d'animaux
+ramat_gan_safari.add_animal("Giraffe")
+ramat_gan_safari.add_animal("Baboon")
+ramat_gan_safari.add_animal("Bear")
+ramat_gan_safari.add_animal("Cougar")
+ramat_gan_safari.add_animal("Eel")
+ramat_gan_safari.add_animal("Emu")
+
+# Affichage des animaux
+ramat_gan_safari.get_animals()
+
+# Vente d'un animal
+ramat_gan_safari.sell_animal("Bear")
+
+# Affichage après vente
+ramat_gan_safari.get_animals()
+
+# Affichage des groupes
+ramat_gan_safari.get_groups()

@@ -1,0 +1,222 @@
+# Exercice 1 - Challenge Day 2
+# Listes initiales
+keys = ['Ten', 'Twenty', 'Thirty']  
+values = [10, 20, 30]  
+
+#  Associer les listes avec zip()
+zipped = zip(keys, values)  
+
+#  Transformer le zip en dictionnaire
+dictionary = dict(zipped)  
+
+#  Afficher le dictionnaire final
+print(dictionary)  # {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+
+# Exercice 2 - Challenge Day 2
+#  Dictionnaire contenant les noms et âges de la famille
+family = {"rick": 43, "beth": 13, "morty": 5, "summer": 8}
+
+#  Variable pour stocker le coût total des billets
+total_cost = 0  
+
+#  Boucle pour calculer le prix pour chaque membre de la famille
+for name, age in family.items():  
+    if age < 3:
+        price = 0  # Moins de 3 ans, gratuit
+    elif 3 <= age <= 12:
+        price = 10  # Entre 3 et 12 ans, 10$
+    else:
+        price = 15  # Plus de 12 ans, 15$
+
+    total_cost += price  #  Ajoute le prix au coût total
+    print(f"{name} doit payer {price}$")  #  Affiche le prix du billet
+
+#  Afficher le coût total pour la famille
+print(f"Coût total pour la famille : {total_cost}$")
+
+# Exercice 3 - Challenge Day 2
+#  Étape 1 : Créer le dictionnaire
+brand = {
+    "name": "Zara",
+    "creation_date": 1975,
+    "creator_name": "Amancio Ortega Gaona",
+    "type_of_clothes": ["men", "women", "children", "home"],
+    "international_competitors": ["Gap", "H&M", "Benetton"],
+    "number_stores": 7000,
+    "major_color": {
+        "France": "blue",
+        "Spain": "red",
+        "US": ["pink", "green"]
+    }
+}
+
+#  Étape 2 : Modifier le nombre de magasins
+brand["number_stores"] = 2
+
+#  Étape 3 : Afficher les clients de Zara
+print(f"Zara's clients are: {', '.join(brand['type_of_clothes'])}.")
+
+#  Étape 4 : Ajouter la clé "country_creation"
+brand["country_creation"] = "Spain"
+
+#  Étape 5 : Ajouter "Desigual" si la clé "international_competitors" existe
+if "international_competitors" in brand:
+    brand["international_competitors"].append("Desigual")
+
+#  Étape 6 : Supprimer la clé "creation_date"
+del brand["creation_date"]
+
+#  Étape 7 : Afficher le dernier concurrent international
+print(brand["international_competitors"][-1])
+
+#  Étape 8 : Afficher les couleurs principales aux US
+print(brand["major_color"]["US"])
+
+#  Étape 9 : Afficher le nombre total de paires clé-valeur
+print(len(brand))
+
+#  Étape 10 : Afficher toutes les clés du dictionnaire
+print(brand.keys())
+
+#  Étape 11 : Créer un second dictionnaire
+more_on_zara = {
+    "creation_date": 1975,
+    "number_stores": 10000
+}
+
+#  Étape 12 : Fusionner `more_on_zara` dans `brand`
+brand.update(more_on_zara)
+
+# Étape 13 : Afficher "number_stores"
+print(brand["number_stores"])  #  La valeur a été remplacée par 10000
+
+# Exercice 4 - Challenge Day 2
+# Définition de la fonction qui prend un nom de ville et un pays avec une valeur par défaut
+def describe_city(city, country="France"):  
+    print(f"{city} is in {country}.")  # Affiche la phrase avec le nom de la ville et du pays
+
+# Appel de la fonction avec différents arguments
+describe_city("Reykjavik", "Iceland")  # Spécifie un pays différent
+describe_city("Paris")  # Utilise le pays par défaut "France"
+describe_city("Tokyo", "Japan")  # Spécifie un autre pays
+
+# EXERCICE 5 - Challenge Day 2
+import random  # Importation du module random pour générer un nombre aléatoire
+
+# Définition de la fonction qui compare le nombre de l'utilisateur avec un nombre aléatoire
+def compare_numbers(user_number):
+    random_number = random.randint(1, 100)  # Génère un nombre entre 1 et 100
+
+    # Vérifie si le nombre de l'utilisateur est identique au nombre généré
+    if user_number == random_number:
+        print(f"Success! Both numbers are {user_number}.")  # Affichage du message de réussite
+    else:
+        print(f"Fail! Your number was {user_number}, but the random number was {random_number}.")  # Affichage du message d'échec
+
+# Demande un nombre à l'utilisateur
+user_input = int(input("Enter a number between 1 and 100: "))
+
+# Appelle la fonction avec le nombre entré par l'utilisateur
+compare_numbers(user_input)
+
+# Exercice 6 - Challenge Day 2
+# Définition de la fonction avec des valeurs par défaut
+def make_shirt(size="large", text="I love Python"):
+    print(f"The size of the shirt is {size} and the text is '{text}'.")
+
+# Appel de la fonction avec les valeurs par défaut
+make_shirt()  # Large shirt with "I love Python"
+
+# Shirt medium avec le message par défaut
+make_shirt("medium")
+
+# Shirt personnalisé
+make_shirt("small", "Hello World!")
+
+# Appel avec des arguments nommés
+make_shirt(text="Code is life!", size="extra-large")
+
+# Exercice 7 - Challenge Day 2
+import random
+
+# Fonction qui génère une température aléatoire en fonction de la saison
+def get_random_temp(season):
+    if season == "winter":
+        return round(random.uniform(-10, 16), 1)  # Température entre -10 et 16°C
+    elif season == "spring":
+        return round(random.uniform(10, 25), 1)
+    elif season == "summer":
+        return round(random.uniform(20, 40), 1)
+    elif season == "autumn":
+        return round(random.uniform(5, 20), 1)
+    else:
+        return round(random.uniform(-10, 40), 1)  # Valeur par défaut si l'entrée est incorrecte
+
+# Fonction principale qui affiche la température et un conseil
+def main():
+    season = input("Enter a season (winter, spring, summer, autumn): ").lower()
+    temp = get_random_temp(season)
+    print(f"The temperature right now is {temp}°C.")
+
+    if temp < 0:
+        print("Brrr, that’s freezing! Wear some extra layers today.")
+    elif temp < 16:
+        print("Quite chilly! Don’t forget your coat.")
+    elif temp < 23:
+        print("Nice weather, maybe bring a light jacket.")
+    elif temp < 32:
+        print("It's warm! Enjoy the sun.")
+    else:
+        print("It's really hot! Stay hydrated.")
+
+# Exécution du programme
+main()
+
+# Exercice 8 - Challenge Day 2
+# Liste des questions et réponses
+data = [
+    {"question": "What is Baby Yoda's real name?", "answer": "Grogu"},
+    {"question": "Where did Obi-Wan take Luke after his birth?", "answer": "Tatooine"},
+    {"question": "What year did the first Star Wars movie come out?", "answer": "1977"},
+    {"question": "Who built C-3PO?", "answer": "Anakin Skywalker"},
+    {"question": "Anakin Skywalker grew up to be who?", "answer": "Darth Vader"},
+    {"question": "What species is Chewbacca?", "answer": "Wookiee"}
+]
+
+# Fonction qui pose les questions et vérifie les réponses
+def quiz():
+    correct = 0
+    incorrect = 0
+    wrong_answers = []
+
+    for item in data:
+        user_answer = input(item["question"] + " ").strip()
+        if user_answer.lower() == item["answer"].lower():
+            correct += 1
+        else:
+            incorrect += 1
+            wrong_answers.append({
+                "question": item["question"],
+                "user_answer": user_answer,
+                "correct_answer": item["answer"]
+            })
+
+    # Affichage des résultats
+    print(f"\nYou got {correct} correct answers and {incorrect} incorrect answers.")
+
+    # Affichage des erreurs
+    if wrong_answers:
+        print("\nHere are the questions you got wrong:")
+        for item in wrong_answers:
+            print(f"Question: {item['question']}")
+            print(f"Your answer: {item['user_answer']}")
+            print(f"Correct answer: {item['correct_answer']}\n")
+
+    # Proposition de rejouer
+    if incorrect > 3:
+        replay = input("You got more than 3 wrong answers. Do you want to try again? (yes/no): ").lower()
+        if replay == "yes":
+            quiz()
+
+# Lancer le quiz
+quiz()

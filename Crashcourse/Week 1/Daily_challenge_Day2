@@ -1,0 +1,15 @@
+# Demander un mot à l'utilisateur
+word = input("Enter a word: ")
+
+# Initialiser un dictionnaire vide pour stocker les positions des lettres
+letter_positions = {}
+
+# Parcourir chaque lettre du mot avec son index
+for index, letter in enumerate(word):
+    if letter not in letter_positions:
+        letter_positions[letter] = []  # Initialiser une liste vide si la lettre n'existe pas encore
+
+    letter_positions[letter].append(index)  # Ajouter l'index à la liste associée à la lettre
+
+# Afficher le dictionnaire final
+print(letter_positions)
