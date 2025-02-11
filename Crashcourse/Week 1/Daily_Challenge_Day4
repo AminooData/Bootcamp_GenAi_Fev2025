@@ -1,0 +1,42 @@
+import math
+
+class Pagination:
+    def __init__(self, items=None, pageSize=10):
+        self.items = items if items is not None else []  # Liste d'éléments à paginer
+        self.pageSize = int(pageSize)  # Convertir en entier si besoin
+        self.totalPages = math.ceil(len(self.items) / self.pageSize)  # Nombre total de pages
+        self.currentPage = 1  # Commence à la page 1
+
+    def getVisibleItems(self):
+        """Retourne les éléments visibles sur la page actuelle."""
+        start = (self.currentPage - 1) * self.pageSize  # Calcul de l'index de départ
+        end = start + self.pageSize  # Calcul de l'index de fin
+        return self.items[start:end]  # Retourne la portion des éléments
+
+    def nextPage(self):
+        """Passe à la page suivante si possible."""
+        if self.currentPage < self.totalPages:
+            self.currentPage += 1
+        return self  # Permet le chaînage
+
+    def prevPage(self):
+        """Revient à la page précédente si possible."""
+        if self.currentPage > 1:
+            self.currentPage -= 1
+        return self
+
+    def firstPage(self):
+        """Retourne à la première page."""
+        self.currentPage = 1
+        return self
+
+    def lastPage(self):
+        """Va à la dernière page."""
+        self.currentPage = self.totalPages
+        return self
+
+    def goToPage(self, pageNum):
+        """Va à une page spécifique en s'assurant qu'elle est valide."""
+        pageNum = int(pageNum)  # Convertir en entier
+        self.currentPage = max(1, min(self.totalPages, pageNum))  # Limiter entre 1 et totalPages
+        return self
