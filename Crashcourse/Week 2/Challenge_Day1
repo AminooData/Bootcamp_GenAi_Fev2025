@@ -1,0 +1,51 @@
+Étude de cas : L’analyse des données chez Netflix
+1️⃣ Contexte : Le problème initial
+Netflix, l’un des plus grands services de streaming au monde, fait face à un défi majeur : comment retenir ses abonnés et leur proposer des contenus qu’ils aiment sans qu’ils aient à chercher longtemps ?
+
+💡 Problème :
+
+Trop de choix peut rendre difficile la sélection d’un film ou d’une série.
+Un abonné qui ne trouve pas rapidement un contenu qui lui plaît risque d’annuler son abonnement.
+2️⃣ Données collectées et analysées
+Netflix collecte et analyse une énorme quantité de données utilisateur pour améliorer ses recommandations.
+
+📌 Exemples de données collectées :
+✔ Historique de visionnage : films/séries regardés, durée, interruptions.
+✔ Interactions avec l’interface : likes, partages, ajouts en favoris.
+✔ Temps passé sur la plateforme : à quelle heure et combien de temps regarde un utilisateur ?
+✔ Données démographiques : âge, localisation, préférences culturelles.
+
+3️⃣ Méthodes utilisées pour analyser les données
+Netflix utilise le Machine Learning et l’Intelligence Artificielle pour analyser ces données et faire des recommandations.
+
+📌 Principales techniques utilisées :
+✔ Filtrage collaboratif → Compare les préférences des utilisateurs similaires.
+✔ Analyse de contenu → Recommande des films similaires à ceux déjà regardés.
+✔ Deep Learning → Analyse des habitudes et ajuste les recommandations.
+✔ A/B Testing → Teste différentes suggestions pour voir celles qui fonctionnent le mieux.
+
+4️⃣ Résultats et impact
+Grâce à l’analyse des données, Netflix personnalise ses recommandations, ce qui a plusieurs avantages :
+
+📌 Impact sur l’entreprise :
+✔ 80% des films/séries regardés proviennent des recommandations.
+✔ Moins d’annulations d’abonnements car les utilisateurs trouvent rapidement des contenus qui leur plaisent.
+✔ Augmentation du temps passé sur la plateforme, donc plus de fidélité et de revenus.
+
+📌 Impact sur l’utilisateur :
+✔ Meilleure expérience utilisateur → Pas besoin de chercher longtemps un bon film.
+✔ Recommandations pertinentes basées sur ses goûts.
+✔ Découverte de contenus qu’il n’aurait pas regardés autrement.
+
+5️⃣ Conclusion : Leçons à retenir
+📌 Sans l’analyse des données, Netflix aurait du mal à recommander des contenus adaptés à chaque utilisateur, ce qui entraînerait des pertes d’abonnés.
+📌 Grâce aux algorithmes de Machine Learning, la plateforme optimise l’expérience et garde ses abonnés engagés.
+📌 L’analyse des données est donc un levier stratégique essentiel pour toutes les entreprises du numérique.
+
+📢 Présentation des résultats
+🎯 Plan de présentation :
+1️⃣ Introduction : Présenter Netflix et son problème de rétention des abonnés.
+2️⃣ Données collectées : Décrire les informations analysées.
+3️⃣ Méthodes d’analyse : Expliquer les algorithmes utilisés.
+4️⃣ Résultats : Montrer l’impact sur Netflix et ses utilisateurs.
+5️⃣ Conclusion : Souligner l’importance de l’analyse des données.
